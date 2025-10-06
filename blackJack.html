@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlackJack</title>
+    <style>
+      body {
+        background: url("https://media.istockphoto.com/id/672556284/photo/green-felt-and-playing-chips-abstract-background.jpg?s=612x612&w=0&k=20&c=qCon6tBWqG3-dLMxVkTlOA7d5QKD6KC8W32p3H2N-MQ=");
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: white;
+        font-weight: bold;
+      }
+      h1 {
+        color: goldenrod;
+        font-size: 42px;
+      }
+      #mes-el {
+        font-style: italic;
+      }
+      #start,
+      #new {
+        color: #016f32;
+        width: 150px;
+        background-color: goldenrod;
+        border-radius: 5px;
+        padding: 6px 12px;
+        border: none;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Blackjack</h1>
+    <p id="mes-el">Want to play a round?</p>
+    <p id="cards">Cards:</p>
+    <p id="sum">Sum:</p>
+    <button id="start" onclick="startGame()">START GAME</button>
+    <br />
+    <button id="new" onclick="newCard()">NEW CARD</button>
+    <script src="blackJack.js"></script>
+  </body>
+</html>
