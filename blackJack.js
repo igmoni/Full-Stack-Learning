@@ -16,6 +16,10 @@ function startGame() {
 }
 
 function renderGame() {
+  for (let i = 0; i < cards.length; i++) {
+    cardEl.textContent += 'Cards' + cards[i];
+    
+  }
   cardEl.textContent = "Cards: " + cards[0] + " " + cards[1];
   sumEl.textContent = "Sum: " + sum;
   if (sum <= 20) {
@@ -37,5 +41,6 @@ console.log(hasBlackJack);
 function newCard() {
   let card = 8;
   sum += card;
+  cards.push(card)
   startGame();
 }
