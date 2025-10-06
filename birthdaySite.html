@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy BirthDay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        text-align: center;
+        font-family: "Happy Monkey", cursive;
+        background: linear-gradient(#22d2ff,#efb0c9);
+        color: white;
+      }
+      #header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #img {
+        border-radius: 50%;
+        width: 200px;
+        border: 5px solid #efb0c9;
+        margin-bottom: 10px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        text-shadow: 0px 0px 1px black;
+      }
+      #bday-age {
+        background-color: #efb0c9;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin: 5px 0 10px 0;
+      }
+      #bday-date {
+        background-color: #efb0c9;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      .gift-section {
+        margin-top: 50px;
+      }
+      .gft-h,
+      .gft-sh {
+        text-shadow: 0px 0px 1px black;
+      }
+
+      .gft-h {
+        margin-bottom: 10px;
+      }
+
+      .gft-sh {
+        margin-top: 0;
+      }
+      .gft-img {
+        width: 400px;
+        border: 5px solid white;
+        border-radius: 20px;
+        background: url("images/gift-cover.jpg");
+        height: 400px;
+        background-size: cover;
+        margin: 0 auto;
+      }
+
+      .gft-img:hover {
+        background: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2QxZXl6N29sNmtybjlvemJ0OXVvc2pwa3BnY2FjMWdiaW92ZjN4aSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hZj44bR9FVI3K/giphy.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .fe-img {
+        width: 400px;
+        border: 5px solid white;
+        border-radius: 20px;
+        background: url("images/gift-cover.jpg");
+        height: 400px;
+        background-size: cover;
+        margin: 0 auto;
+      }
+
+      .fe-img:hover {
+        background: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHY5MW9obmJycDZxaHQ2cmRxNW5ocjZpdW9mcWU3MjRxeXJyZ3RoNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ckB5razpgN2rd4qTfe/giphy.gif");
+
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .g-img,
+      .b-img,
+      .c-img {
+        width: 400px;
+        border: 5px solid white;
+        border-radius: 20px;
+        background: url("images/gift-cover.jpg");
+        height: 400px;
+        background-size: cover;
+        margin: 0 auto;
+      }
+      .g-img:hover {
+        background: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnh0aGx1eGN3aWJzYWpxenZ1dHQ5ZjJiOWR1NDh5cXk1MGZiaWdkcSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/fvrfW6FkwTvYcZCvsy/giphy.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .b-img:hover {
+        background: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXdtcnM5Y2l5dXZjNzVmYzk0Y2N5aWNjY3JkdXdqbzRwdG9wZjdmbSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1gRtl9mdLQvvvOfR9u/giphy.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .c-img {
+        height: 200px;
+      }
+      .c-img:hover {
+        background: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3AyemRncnVvYm9sdDlsOTZxM3gwMXl2cjhqMGd0dnZxdGdyNmdkZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/BPJmthQ3YRwD6QqcVD/giphy.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Today is Deepika's Birthday🎉</h1>
+      <img id="img" src="images/mars.jpeg" alt="" />
+      <h2 id="bday-age">18 years old!</h2>
+      <h4 id="bday-date">25.10.2007</h4>
+    </div>
+    <div class="gift-section">
+      <h1 class="gft-h">Here's how happy I am for you today🥳</h1>
+      <h3 class="gft-sh">(Hover over your gift)</h3>
+      <div class="gft-img"></div>
+    </div>
+    <div class="feeling">
+      <h1 class="fe-t">How people react when you enter the room😍</h1>
+      <div class="fe-img"></div>
+    </div>
+    <div class="genius">
+      <h1 class="g-t">If I had to describe you with ONE word👇</h1>
+      <div class="g-img"></div>
+    </div>
+
+    <div class="badass">
+      <h1>The only person as badass as you</h1>
+      <div class="b-img"></div>
+    </div>
+
+    <div class="cheers">
+      <h1>This one's for you, my friend🍾</h1>
+      <div class="c-img"></div>
+    </div>
+  </body>
+</html>

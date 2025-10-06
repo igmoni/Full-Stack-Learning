@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>The count is <span id="val">0</span></h1>
+
+    <button onclick="inc()" id="inc">Increment</button>
+    <button onclick="dec()" id="dec">Decrement</button>
+    <button onclick="restart()">Restart</button>
+
+    <button onclick="save()" id="save">Save</button>
+
+    <p id="p">Previous Entries: </p>
+    <script>
+      let count = parseInt(document.getElementById("val").innerText);
+
+
+      let val = document.getElementById("val")
+      function inc() {
+        val.innerText = count += 1;
+      }
+
+      function dec() {
+        val.textContent = count -= 1;
+      }
+
+      function restart() {
+        val.textContent = 0
+      }
+
+      function save() {
+        console.log(val.innerText)
+        let countStr = val.innerText + ' -  ';    
+        p.textContent += countStr
+    }
+
+    </script>
+  </body>
+</html>
