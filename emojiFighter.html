@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emoji Fighter</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Emoji Fighter</h1>
     <p id="fig"></p>
     <button id="pf">Pick Fighters</button>
 
-
-
-    
     <script>
-        let fighters = ['✋','🍾','👇','😍','🥳','🎉','😅']
-        let stageEl = document.querySelector('#fig')
-        let fightBtn = document.querySelector('#pf')
+      let fighters = ["✋", "🍾", "👇", "😍", "🥳", "🎉", "😅"];
+      let stageEl = document.querySelector("#fig");
+      let fightBtn = document.querySelector("#pf");
 
-        fightBtn.addEventListener('click', ()=> {
-            let num1 = Math.floor(Math.random() * fighters.length)
-            let num2 = Math.floor(Math.random() * fighters.length)
-            stageEl.textContent = fighters[num1] + fighters[num2] 
-        })
+      fightBtn.addEventListener("click", () => {
+        let num1 = Math.floor(Math.random() * fighters.length);
+        let num2 = Math.floor(Math.random() * fighters.length);
+        stageEl.textContent = fighters[num1] + fighters[num2];
+      });
     </script>
-</body>
+  </body>
 </html>
