@@ -50,20 +50,6 @@
     <button id="input-btn">SAVE INPUT</button>
 
     <ul id="ulEl"></ul>
-    <script>
-      let myLeads = [];
-      const inputEl = document.querySelector("#input-el");
-      const btn = document.querySelector("#input-btn");
-      const ulEl = document.querySelector("#ulEl");
-
-      btn.addEventListener("click", () => {
-        renderLeads();
-        myLeads.push(inputEl.value);
-        ulEl.innerHTML += `<li><a target="_blank" href='${inputEl.value}'> ${inputEl.value}  </a></li>`;
-        inputEl.value = "";
-      });
-
-      function renderLeads() {}
-    </script>
+    <script src="profileSaver.js"></script>
   </body>
 </html>
