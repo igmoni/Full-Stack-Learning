@@ -1,13 +1,22 @@
 let myLeads = [];
+
 const inputEl = document.querySelector("#input-el");
 const btn = document.querySelector("#input-btn");
 const ulEl = document.querySelector("#ulEl");
 
+localStorage.clear();
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+
+console.log(leadsFromLocalStorage);
+
 btn.addEventListener("click", () => {
-  renderLeads();
   myLeads.push(inputEl.value);
   ulEl.innerHTML += `<li><a target="_blank" href='${inputEl.value}'> ${inputEl.value}  </a></li>`;
   inputEl.value = "";
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
+
+  renderLeads();
+  console.log(localStorage.getItem("myLeads"));
 });
 
 function renderLeads() {
@@ -20,11 +29,4 @@ function renderLeads() {
         </a>
         </li>`;
   }
-  localStorage.setItem("myLeads", inputEl.value);
-  console.log(localStorage.getItem("myLeads"));
 }
-console.log(localStorage.getItem("myLeads"));
-
-localStorage.setItem("myLeads", "www.example.com");
-
-localStorage.clear();
