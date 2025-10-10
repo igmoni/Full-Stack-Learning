@@ -30,8 +30,9 @@
         background-color: #5f9341;
         color: white;
         font-weight: bold;
-        border: none;
+        
         padding: 10px 20px;
+        border: 1px solid #5f9341;
         margin-bottom: 20px;
       }
 
@@ -43,12 +44,20 @@
       a {
         color: #5f9341;
       }
+      #del {
+        color: #5f9341;
+        background-color: white;
+        border: 2px solid #5f9341;
+        font-weight: bold;
+        padding: 10px 20px;
+      }
     </style>
   </head>
   <body>
     <input type="text" id="input-el" />
     <button id="input-btn">SAVE INPUT</button>
-
+    <button id="tab">SAVE TAB</button>
+    <button id="del">DELETE ALL</button>
     <ul id="ulEl"></ul>
     <script src="profileSaver.js"></script>
   </body>
