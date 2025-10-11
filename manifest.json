@@ -5,6 +5,9 @@
     "action": {
         "default_popup": "profileSaver.html",
         "default_icon": "icon.png"
-    }
+    },
+    "permissions": [
+        "tabs"
+    ]    
 
 }

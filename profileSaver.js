@@ -4,7 +4,7 @@ const inputEl = document.querySelector("#input-el");
 const btn = document.querySelector("#input-btn");
 const ulEl = document.querySelector("#ulEl");
 const del = document.querySelector("#del");
-const tab = document.querySelector('#tab')
+const tab = document.querySelector("#tab");
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
@@ -13,9 +13,15 @@ if (leadsFromLocalStorage) {
   render(myLeads);
 }
 
-const tabs = [
-  {url : 'https;//www.google.com'}
-]
+const tabs = [{ url: "https://www.google.com" }];
+
+tab.addEventListener("click ", () => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    myLeads.push(tabs[0].url);
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
+  });
+});
 
 function render(leads) {
   let listItems = "";
@@ -27,9 +33,10 @@ function render(leads) {
         </a>
         </li>`;
   }
+  ulEl.innerHTML = listItems;
 }
 
-del.addEventListener("dblclick", () => {
+del.addEventListener("click", () => {
   localStorage.clear();
   myLeads = [];
   render(myLeads);
@@ -37,10 +44,8 @@ del.addEventListener("dblclick", () => {
 
 btn.addEventListener("click", () => {
   myLeads.push(inputEl.value);
-  ulEl.innerHTML += `<li><a target="_blank" href='${inputEl.value}'> ${inputEl.value}  </a></li>`;
   inputEl.value = "";
   localStorage.setItem("myLeads", JSON.stringify(myLeads));
 
   render(myLeads);
-  console.log(localStorage.getItem("myLeads"));
 });
