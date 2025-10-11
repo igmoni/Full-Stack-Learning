@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="render()">RENDER</button>
+    <div>
+
+    </div>
+    <script>
+        const imgs = [
+            'icon.png',
+            'images/mars.jpeg',
+            'images/universe.jpg'
+        ]
+        const div = document.querySelector('div')
+        function render() {
+            let imgsDOM = ''
+            for(let i = 0;i<imgs.length; i++) {
+                imgsDOM += `<img src="${imgs[i]}" alt="image" width="100"/>`
+            }
+            div.innerHTML = imgsDOM
+        }
+
+    </script>
+</body>
+</html>
