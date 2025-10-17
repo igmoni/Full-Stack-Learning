@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        
+      .label-card {
+        width: 200px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        height: 200px;
+        padding: 20px;
+        color: white;
+        font-size: 22px;
+        background-color: blue;
+        margin: 50px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="label"></div>
+    <script>
+      const getLabel = (text, sender, ...staffObj) => {
+        return  staffObj.map(
+          (staff) => `<div class='label-card'>
+                    <p>Dear ${staff.name}</p>
+                    <p>${text}</p>
+                    <p>Best Wishes</p>
+                    <p>${sender}</p>
+                    </div>`
+        ).join('');
+      };
+
+      const text = "Thank you";
+      const sender = "Mohan";
+
+      document.querySelector("#label").innerHTML = getLabel(
+        text,
+        sender,
+        { name: "Sally" },
+        { name: "Mike" },
+        { name: "rob" },
+        { name: "Harriet" }
+      );
+    </script>
+  </body>
+</html>

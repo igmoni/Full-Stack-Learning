@@ -1,6 +1,6 @@
 const wel = 'Mohan'
 
-function greetUser(greeting, name) {
+export default function greetUser(greeting, name) {
     console.log(greeting,name)
 }
 

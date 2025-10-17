@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock API</title>
+    <style>
+      body {
+        background-color: black;
+        font-family: "Trebuchet MS";
+      }
+
+      .card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin: 50px auto;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <p>Name: <span class="n"></span></p>
+      <p>Symbol: <span class="s"></span></p>
+      <p>Price: <span class="p"></span></p>
+      <p>Time: <span class="t"></span></p>
+    </div>
+    <script>
+      function getStockData() {
+        return {
+          name: "QtechAI",
+          sym: "QTA",
+          price: (Math.random() * 3).toFixed(2),
+          time: new Date().toLocaleTimeString(),
+        };
+      }
+
+      let prevPrice = null;
+
+      setInterval(() => {
+        const stockData = getStockData();
+        renderStock(stockData);
+      }, 1500);
+
+      function renderStock(stockData) {
+        const n = document.querySelector(".n");
+        const s = document.querySelector(".s");
+        const p = document.querySelector(".p");
+        const t = document.querySelector(".t");
+
+        const { name, sym, price, time } = stockData;
+
+        n.textContent = name;
+        s.textContent = sym;
+        t.textContent = time;
+        let icon = "▶️";
+        if (price > prevPrice) {
+          icon = "💹";
+        } else if (price < prevPrice) {
+          icon = "🔻";
+        }
+        p.textContent = `${price} ${icon}`;
+        prevPrice = price;
+      }
+    </script>
+  </body>
+</html>
