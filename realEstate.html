@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        gap: 5px;
+      }
+      .card {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        width: 90%;
+        height: 220px;
+        gap: 35px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        padding: 0;
+        img {
+          border-radius: 15px 0px 0px 15px;
+          height: 220px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container"></section>
+
+    <script>
+      const forSale = [
+        {
+          loc: "London",
+          price: 890000,
+          rooms: [14, 18, 14, 10, 6],
+          comment: "Highly desirable location in stunning scenery",
+          image: "images/mars.jpeg",
+        },
+        {
+          loc: "New York",
+          price: 980000,
+          rooms: [13, 16, 14, 18, 16],
+          comment: "Highly desirable location in stunning scenery",
+          image: "images/mars.jpeg",
+        },
+      ];
+
+      const tempForSale = {
+        loc: "Bengaluru",
+        price: 750000,
+        rooms: [13, 16, 14, 18, 16],
+        comment: "Highly desirable location in stunning scenery",
+        image: "images/universe.jpg",
+      };
+
+      function getProperty(propertyArr = [tempForSale]) {
+        return propertyArr.map((property) => {
+          const { loc, price, rooms, comment, image } = property;
+          const totalRoom = rooms.reduce((total, current) => total + current);
+          return `<section class="card">
+                    <img src="${image}" alt="Mars"/>
+                    <div class="label">
+                        <h2>${loc}</h2>
+                        <h3>$${price}</h3>
+                        <p>${comment}</p>
+                        <h3>${totalRoom}</h3>
+                        </div>
+                        </section>`;
+        });
+      }
+
+      document.querySelector(".container").innerHTML = getProperty(forSale);
+    </script>
+  </body>
+</html>
