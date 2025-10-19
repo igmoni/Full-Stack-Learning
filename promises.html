@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises Challenge</title>
+  </head>
+  <body>
+    <div class="img-container"></div>
+
+    <script type="module">
+      // const preLoadImg =  (url) => {
+      //     return new Promise((resolve, reject)=> {
+      //         const img = new Image()
+      //         img.src = url
+      //         img.alt = ' beautiful mars'
+      //         img.addEventListener('load',()=> resolve(img))
+      //         img.addEventListener('error',()=> reject(img))
+      //     })
+      // }
+
+      //     try {
+      //         const results = await  preLoadImg('https://scrimba.ams3.cdn.digitaloceanspaces.com/assets/courses/gadvanced/scenicl.jpg')
+      //         console.log(results)
+      //         document.querySelector('.img-container').innerHTML(results)
+      //     } catch(err) {
+      //         console.log(err)
+      //     }
+      const uploadFile = async () => {
+  return  new Promise((resolve, reject) => {
+    console.log('Step1; Uploading...')
+    setTimeout(()=> {
+      resolve()
+    },1000)
+  })
+}
+const processFile = async () => {
+  return  new Promise((resolve, rej) => {
+    console.log('Step1; Processing...')
+    setTimeout(()=> {
+      resolve()
+    },1000)
+  })
+}
+const notifyUser = async () => {
+  return  new Promise((res, rej) => {
+    console.log('Step1; notifying user...')
+    setTimeout(()=> {
+      res()
+    },1000)
+  })
+}
+
+
+try {
+  await uploadFile()
+  await processFile()
+  await notifyUser()
+} catch(e) {
+  console.log(e)
+} finally {
+  console.log('All steps completed')
+}
+    </script>
+  </body>
+</html>
