@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Challenge about Promises</title>
+  </head>
+  <body>
+    <div class="img-container"></div>
+    <div class="upload-container">Upload Images</div>
+    <script>
+      const getImagePromise = (url) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const img = new Image();
+            img.src = url;
+            img.alt = "scenic image";
+            img.addEventListener("load", () => resolve(img));
+            img.addEventListener("error", () =>
+              reject(new Error(`Failed to load image: ${img}`))
+            );
+          }, 500);
+        });
+      };
+
+      const images = [
+        "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
+        "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
+        "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
+      ];
+
+      const preLoadImages = async (imgUrlArr) => {
+        const imgContainer = document.querySelector(".img-container");
+        const uploadContainer = document.querySelector(".upload-container");
+
+        const promises = imgUrlArr.map((url) => getImagePromise(url));
+
+        try {
+          const results = await Promise.all(promises);
+          console.log(`All images loaded successfully`);
+          uploadContainer.style.display = "none";
+          results.forEach((img) => {
+            imgContainer.appendChild(img);
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      document
+        .querySelector(".submit-img")
+        .addEventListener("click", () => preLoadImages(images));
+    </script>
+  </body>
+</html>
