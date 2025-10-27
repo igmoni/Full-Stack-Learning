@@ -14,4 +14,4 @@ import { sendResponse } from './sendResponse.js'
     }
 }
 
-export default serveStatic
+export default serveStatic;
