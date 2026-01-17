@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async JS</title>
+  </head>
+  <body>
+    <h1>Mohan</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+      const strtBtn = document.querySelector("#start");
+      const stpBtn = document.querySelector("#stop");
+      //     const changeText = () =>
+      //     (document.querySelector("h1").innerHTML = "best JS Series");
+
+      //     // runs the code after this many seconds like the code runs after 2 seconds
+      //   const sayMohan = () => console.log("Mohan");
+
+      //   const changeMe = setTimeout(changeText, 2000);
+
+      //   btn.addEventListener("click", () => {
+      //     clearTimeout(changeMe)
+      //     console.log("STOPPED") 
+      //   })
+      const sayDate = (str) => {
+        console.log("Mohan:", Date.now().toLocaleString());
+      };
+      let intervalId;
+      strtBtn.addEventListener("click", () => {
+        intervalId = setInterval(sayDate, 1000);
+      });
+
+      stpBtn.addEventListener("click", () => {
+        clearInterval(intervalId);
+        console.log("STOPPED");
+      });
+    </script>
+  </body>
+</html>
